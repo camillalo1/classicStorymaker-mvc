@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Storymaker</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <div id="app"></div>
@@ -17,49 +18,48 @@
     let thirdWord = "___";
     let fourthWord = "___";
 
-    <div class="startRow choiceBoxes" onclick="chooseFirstWord(this)"> Green </div>
-    <div class="choiceBoxes" onclick="chooseFirstWord(this)"> Red </div>
-    
-    <div class="startRow choiceBoxes" onclick="chooseSecondWord(this)"> Cat </div>
-    <div class="choiceBoxes" onclick="chooseSecondWord(this)"> Man </div>
-    
-    <div class="startRow choiceBoxes" onclick="chooseThirdWord(this)"> Stared </div>
-    <div class="choiceBoxes" onclick="chooseThirdWord(this)"> Jumped </div>
-    
-    <div class="startRow choiceBoxes" onclick="chooseFourthWord(this)"> Pool </div>
-    <div class="choiceBoxes" onclick="chooseFourthWord(this)"> Wall </div>
-
     //View
 
         updateView();
     function updateView(){
-        let 
-        document.getElementById('app').innerHTML = `
-        Once, there was a ${firstWord} ${secondWord} that ${thirdWord} in the ${fourthWord} - 
-        and great things happened. The End.
+        document.getElementById('app').innerHTML = /*HTML*/`
+        <div class="storyBox"> Once, there was a ${firstWord} ${secondWord} that ${thirdWord} in the ${fourthWord} - 
+        and great things happened. The End.</div>
+        <br>
+        <button div class="startRow choiceBoxes" onclick="chooseFirstWord(this)"> Green </button>
+        <button div class="choiceBoxes" onclick="chooseFirstWord(this)"> Red </button>
+        <br>
+        <button div class="startRow choiceBoxes" onclick="chooseSecondWord(this)"> Cat </button>
+        <button div class="choiceBoxes" onclick="chooseSecondWord(this)"> Man </button>
+        <br>
+        <button div class="startRow choiceBoxes" onclick="chooseThirdWord(this)"> Stared </button>
+        <button div class="choiceBoxes" onclick="chooseThirdWord(this)"> Jumped </button>
+        <br>
+        <button div class="startRow choiceBoxes" onclick="chooseFourthWord(this)"> Pool </button>
+        <button div class="choiceBoxes" onclick="chooseFourthWord(this)"> Wall </button>
         `;
     }
 
     //Controller
 
-    function chooseFirstWord(choice){
-            firstWord = choice.innerHTML;
-            buildStory();
+    function chooseFirstWord(choice){ 
+        firstWord = choice.innerHTML;
+            updateView();
         }
 
         function chooseSecondWord(choice){
             secondWord = choice.innerHTML;
-            buildStory();
+            updateView();
         }
 
         function chooseThirdWord(choice){
             thirdWord = choice.innerHTML;
-            buildStory();
+            updateView();
         }
 
         function chooseFourthWord(choice){
             fourthWord = choice.innerHTML;
-            buildStory();
+            updateView();
         }
 </script>
 </body>
